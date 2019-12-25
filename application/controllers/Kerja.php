@@ -61,7 +61,7 @@ class Kerja extends CI_Controller
                 $config['upload_path']      = './assets/doc/';
                 $config['allowed_types']    = 'pdf|doc|docx|xls|xlsx|ppt|pptx';
                 $config['max_size']         = '10000';
-                $config['file_name']        = $no_doc;
+                $config['file_name']        = md5($no_doc);
 
                 $this->load->library('upload', $config);
 
@@ -127,7 +127,7 @@ class Kerja extends CI_Controller
                 $config['upload_path']      = './assets/doc/';
                 $config['allowed_types']    = 'pdf|doc|docx|xls|xlsx|ppt|pptx';
                 $config['max_size']         = '10000';
-                $config['file_name']        = $no_doc;
+                $config['file_name']        = md5($no_doc);
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('doc')) {
@@ -262,7 +262,7 @@ class Kerja extends CI_Controller
                 $config['upload_path']      = './assets/doc/';
                 $config['allowed_types']    = 'pdf|doc|docx|xls|xlsx|ppt|pptx';
                 $config['max_size']         = '10000';
-                $config['file_name']        = $no_doc;
+                $config['file_name']        = md5($no_doc);
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('doc')) {
